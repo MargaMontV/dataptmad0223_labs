@@ -26,23 +26,50 @@ else:
 if b in operation.keys():
     factor = operation[b]
 else:
-    print("I am not able to answer this question. Check your input.")
+   print("I am not able to answer this question. Check your input.")
 
 if c in numbers.keys():
     num2 = numbers[c] * factor
 else:
-    print("I am not able to answer this question. Check your input.")
+   print("I am not able to answer this question. Check your input.")
 
 result = sum([num1, num2])
-dict_result = {0: "zero", 1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine", 10: "ten"}
+dict_result = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10}
 
 if factor < 0:
     num_sign = "negative"
 else:
-    num_sign = ""
+    num_sign = " "
 
 num_result = dict_result[abs(result)]
 
 print(f"{a} {b} {c} equals {num_sign} {num_result}")
 
-print("Thanks for using this calculator, goodbye :)")
+
+
+
+
+
+
+
+"""
+numbers_list = ["zero", "one", "two", "three", "four", "five"]
+factor_list = ["plus", "minus"]
+
+
+if a not in numbers_list or c not in numbers_list:
+    print("I am not able to answer this question. Check your input.")
+if b not in factor_list:
+    print("I am not able to answer this question. Check your input.")
+    
+dict_a = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10}
+dict_b = {"zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10}
+
+
+if b == "plus":
+    print(f"{a} plus {c} equals {a.index + c.index}")
+    print("Thanks for using this calculator, goodbye :)")
+elif b == "minus":
+    print(f"{a} minus {c} equals {a.index - c.index}")
+    print("Thanks for using this calculator, goodbye :)")
+"""

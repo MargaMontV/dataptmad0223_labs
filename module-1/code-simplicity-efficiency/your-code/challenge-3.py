@@ -12,19 +12,16 @@ The following function shows one way to solve the problem but the code is not id
 Refactor the code based on what you have learned about code simplicity and efficiency.
 """
 
-def my_function(X):
-    solutions = []
-    for x in range(5, X):
-        for y in range(4, X):
-            for z in range(3, X):
-                if (x*x==y*y+z*z):
-                    solutions.append([x, y, z])
-    m = 0
+import math
+def longest_hypotenuse(number):
+    solutions = [[x, y, z] for x in range(2, number) for y in range(2, number) for z in range(2, 
+                            number) if math.sqrt(z ** 2) == math.sqrt(x ** 2 + y ** 2)]
+    max_length = 0
     for solution in solutions:
-        if m < max(solution):
-            m = max(solution)
-    return m
+        if max_length < max(solution):
+            max_length = max(solution) 
+    
+    return max_length
 
-X = input("What is the maximal length of the triangle side? Enter a number: ")
-
-print("The longest side possible is " + str(my_function(int(X))))
+number = int(input("What is the maximal length of the triangle side? Enter a number: "))
+print(f"The longest side possible is {longest_hypotenuse(number)}")
